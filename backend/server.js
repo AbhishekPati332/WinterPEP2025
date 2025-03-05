@@ -51,7 +51,9 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });
 });
-
+app.get('/', (req, res) => {
+  res.send('Welcome to WinterPEP API!');
+});
 // Handle 404 errors
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
